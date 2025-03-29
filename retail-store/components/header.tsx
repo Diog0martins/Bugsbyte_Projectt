@@ -17,10 +17,10 @@ export default function Header() {
 
   const routes = [
     { name: "Home", path: "/" },
-    { name: "Produtos Frescos", path: "/category/clothing" },
-    { name: "Congelados", path: "/category/electronics" },
-    { name: "Bebidas", path: "/category/home-kitchen" },
-    { name: "Bio & Eco", path: "/category/beauty" },
+    { name: "Produtos Frescos", path: "/category/produtos-frescos" },
+    { name: "Congelados", path: "/category/congelados" },
+    { name: "Bebidas", path: "/category/bebidas" },
+    { name: "Bio & Eco", path: "/category/bio-eco" },
   ]
 
   return (
