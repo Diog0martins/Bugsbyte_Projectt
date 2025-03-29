@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useCart } from "./cart-provider"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export default function Header() {
   const pathname = usePathname()
@@ -16,10 +17,10 @@ export default function Header() {
 
   const routes = [
     { name: "Home", path: "/" },
-    { name: "Clothing", path: "/category/clothing" },
-    { name: "Electronics", path: "/category/electronics" },
-    { name: "Home & Kitchen", path: "/category/home-kitchen" },
-    { name: "Beauty", path: "/category/beauty" },
+    { name: "Produtos Frescos", path: "/category/clothing" },
+    { name: "Congelados", path: "/category/electronics" },
+    { name: "Bebidas", path: "/category/home-kitchen" },
+    { name: "Bio & Eco", path: "/category/beauty" },
   ]
 
   return (
@@ -32,7 +33,13 @@ export default function Header() {
             </Button>
 
             <Link href="/" className="text-2xl font-bold text-[#eb0205]">
-              RetailStore
+              <Image
+                src="/logo_continente.png" // Correct path for the `public` folder
+                alt="Continente Logo"
+                width={200} // Adjust width
+                height={100} // Adjust height
+                priority // Ensures it loads quickly
+              />
             </Link>
           </div>
 
