@@ -9,7 +9,7 @@ export interface Product {
   id: string
   name: string
   description: string
-  price: number
+  price: string
   image?: string
   categorySlug: string
   featured: boolean

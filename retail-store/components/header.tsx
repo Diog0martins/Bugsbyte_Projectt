@@ -134,7 +134,7 @@ function MiniCart() {
                   <div className="flex-1">
                     <h3 className="text-sm font-medium">{item.name}</h3>
                     <p className="text-sm text-muted-foreground">
-                      {item.quantity} × ${item.price.toFixed(2)}
+                      {item.quantity} × ${item.price}
                     </p>
                   </div>
                   <Button variant="ghost" size="icon" onClick={() => removeItem(item.id)}>

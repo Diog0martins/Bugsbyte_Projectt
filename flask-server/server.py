@@ -22,7 +22,7 @@ def create_route(info_type, name, info):
 
 # Dynamically create routes for each product
 for product in products:
-    product_name = product.get('name')
+    product_name = product.get('id')
     if product_name:
         endpoint_name = f"product_{product_name}"
         app.add_url_rule(
@@ -70,20 +70,20 @@ def list_categories():
     return jsonify(categories)
 
 # Communicate with the other contexts
-@app.route('/product/<product_name>', methods=['GET', 'POST'])
-def get_product(product_name):
+@app.route('/product/<product_id>', methods=['GET', 'POST'])
+def get_product(product_id):
     if request.method == 'GET':
-        product_info = next((p for p in products if p.get('name') == product_name), None)
+        product_info = next((p for p in products if p.get('id') == product_id), None)
         if product_info:
             return jsonify(product_info)
         else:
             return jsonify({"error": "Product not found"}), 404
     elif request.method == 'POST':
-        product_info = next((p for p in products if p.get('name') == product_name), None)
+        product_info = next((p for p in products if p.get('id') == product_id), None)
         if product_info:
             data = request.get_json()
             product_info.update(data)
-            return jsonify({"message": f"Product '{product_name}' updated successfully."})
+            return jsonify({"message": f"Product '{product_id}' updated successfully."})
         else:
             return jsonify({"error": "Product not found"}), 404
 

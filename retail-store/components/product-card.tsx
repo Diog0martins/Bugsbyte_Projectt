@@ -19,7 +19,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <Link href={`/product/${product.id}`} className="block">
           <h3 className="font-medium mb-1 group-hover:text-[#eb0205] transition-colors">{product.name}</h3>
           <p className="text-muted-foreground text-sm mb-2 line-clamp-2">{product.description}</p>
-          <p className="font-semibold mb-4">${product.price.toFixed(2)}</p>
+          <p className="font-semibold mb-4">${product.price}</p>
         </Link>
 
         <AddToCartButton product={product} />
