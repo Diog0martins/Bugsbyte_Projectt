@@ -106,14 +106,6 @@ function MiniCart() {
 
   return (
     <div className="h-full flex flex-col">
-      <div className="flex items-center justify-between py-4">
-        <h2 className="text-lg font-semibold">Your Cart</h2>
-        <SheetTrigger asChild>
-          <Button variant="ghost" size="icon">
-            <X className="h-5 w-5" />
-          </Button>
-        </SheetTrigger>
-      </div>
 
       {items.length === 0 ? (
         <div className="flex-1 flex items-center justify-center">
