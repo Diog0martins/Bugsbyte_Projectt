@@ -1,0 +1,21 @@
+{
+    "products" : {
+        "picanha" :{
+            "price": 20.0
+        },
+
+        "feijao_preto" :{
+            "price": 5.0
+        }
+    },
+
+    "users" : {
+        "user1" : {
+            "routename": "JoaoFernandes"
+        },
+
+        "user2" : {
+            "routename": "GabrielDantas"
+        }
+    }
+}
