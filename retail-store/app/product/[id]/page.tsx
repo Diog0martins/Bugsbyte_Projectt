@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import Image from "next/image"
-import { getProduct,  getProducts} from "@/lib/data"
+import { getProduct, getProducts} from "@/lib/data"
 import AddToCartButton from "@/components/add-to-cart-button"
 import ProductRecommendations from "@/components/product-recommendations"
 import SwipeableProductCard from "@/components/swipable-product-card"

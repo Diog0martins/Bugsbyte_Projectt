@@ -1,39 +1,9 @@
 import type { Category, Product } from "./types"
 
-
 import axios from 'axios';
-
-const API_BASE_URL = 'http://127.0.0.1:5000';
 
 // Mock data for demonstration purposes
 // In a real application, this would be fetched from a database or API
-
-const categories: Category[] = [
-  {
-    slug: "produtos-frescos",
-    name: "Produtos Frescos",
-    description: "Discover the latest fashion trends for all occasions.",
-    image: "/placeholder.svg?height=96&width=96",
-  },
-  {
-    slug: "electronics",
-    name: "Electronics",
-    description: "Explore cutting-edge technology and gadgets.",
-    image: "/placeholder.svg?height=96&width=96",
-  },
-  {
-    slug: "home-kitchen",
-    name: "Home & Kitchen",
-    description: "Everything you need to make your house a home.",
-    image: "/placeholder.svg?height=96&width=96",
-  },
-  {
-    slug: "beauty",
-    name: "Beauty",
-    description: "Premium beauty products for your self-care routine.",
-    image: "/placeholder.svg?height=96&width=96",
-  },
-]
 
 const products: Product[] = [
   {
@@ -110,13 +80,14 @@ const products: Product[] = [
   },
 ]
 
+const API_BASE_URL = 'http://127.0.0.1:5000';
+
 // Simulate API delay
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export async function getCategories(): Promise<Category[]> {
   try {
-    const response = await axios.get(`${API_BASE_URL}/categories`);
-    const categories: Category[] = response.data;
+    const response = await axios.get(`${API_BASE_URL}/category`);
     return response.data;
   } catch (error) {
     console.error('Error fetching categories:', error);
@@ -126,6 +97,8 @@ export async function getCategories(): Promise<Category[]> {
 
 export async function getCategory(slug: string): Promise<Category | undefined> {
   await delay(300)
+  const category_response = await axios.get(`${API_BASE_URL}/category`);
+  const categories: Category[] = category_response.data;
   return categories.find((category) => category.slug === slug)
 }
 
@@ -134,15 +107,22 @@ export async function getFeaturedProducts(): Promise<Product[]> {
   return products.filter((product) => product.featured)
 }
 
-export async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
-  console.log(categories);
+/* export async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
   try {
     const response = await axios.get(`${API_BASE_URL}/category/${categorySlug}`);
+    console.log(response.data)
     return response.data;
   } catch (error) {
     console.error(`Error fetching products for category ${categorySlug}:`, error);
     return [];
   }
+} */
+
+export async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
+    await delay(800)
+    const products_response = await axios.get(`${API_BASE_URL}/product`);
+    const products: Product[] = products_response.data;
+    return products.filter((product) => product.categorySlug === categorySlug)
 }
 
 export async function getProduct(id: string): Promise<Product | undefined> {
@@ -155,14 +135,6 @@ export async function getProduct(id: string): Promise<Product | undefined> {
   }
 }
 
-export async function getRelatedProducts(productId: string): Promise<Product[]> {
-  await delay(500)
-  const product = products.find((p) => p.id === productId)
-  if (!product) return []
-
-  return products.filter((p) => p.categorySlug === product.categorySlug && p.id !== productId).slice(0, 4)
-}
-
 export async function getProducts() {
   // Simulate API delay
   await new Promise((resolve) => setTimeout(resolve, 500))
@@ -172,3 +144,10 @@ export async function getProducts() {
 }
 
 
+export async function getRelatedProducts(productId: string): Promise<Product[]> {
+  await delay(500)
+  const product = products.find((p) => p.id === productId)
+  if (!product) return []
+
+  return products.filter((p) => p.categorySlug === product.categorySlug && p.id !== productId).slice(0, 4)
+}

@@ -10,7 +10,6 @@ export default async function CategoryPage({
   params: { slug: string }
 }) {
   const category = await getCategory(params.slug)
-
   if (!category) {
     notFound()
   }

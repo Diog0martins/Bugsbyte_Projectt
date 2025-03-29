@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname }  from "next/navigation"
 import { ShoppingCart, User, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -17,10 +17,10 @@ export default function Header() {
 
   const routes = [
     { name: "Início", path: "/" },
-    { name: "Produtos Frescos", path: "/category/clothing" },
-    { name: "Congelados", path: "/category/electronics" },
-    { name: "Bebidas", path: "/category/home-kitchen" },
-    { name: "Bio & Eco", path: "/category/beauty" },
+    { name: "Produtos Frescos", path: "/category/produtos-frescos" },
+    { name: "Congelados", path: "/category/congelados" },
+    { name: "Bebidas", path: "/category/bebidas" },
+    { name: "Bio & Eco", path: "/category/bio-eco" },
   ]
 
   return (
