@@ -1,10 +1,8 @@
 from flask import Flask, jsonify, request
-from flask_cors import CORS
 import json
 
 #App class creation, loading data from JSON and routes creation
 app = Flask(__name__)
-CORS(app) 
 
 # Load data from JSON file
 with open("routes.json", "r") as file:
