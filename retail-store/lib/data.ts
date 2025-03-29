@@ -135,6 +135,15 @@ export async function getProduct(id: string): Promise<Product | undefined> {
   }
 }
 
+export async function getProducts() {
+  // Simulate API delay
+  await new Promise((resolve) => setTimeout(resolve, 500))
+
+  // Return all products in a flat array
+  return products
+}
+
+
 export async function getRelatedProducts(productId: string): Promise<Product[]> {
   await delay(500)
   const product = products.find((p) => p.id === productId)
@@ -142,4 +151,3 @@ export async function getRelatedProducts(productId: string): Promise<Product[]> 
 
   return products.filter((p) => p.categorySlug === product.categorySlug && p.id !== productId).slice(0, 4)
 }
-
