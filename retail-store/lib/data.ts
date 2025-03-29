@@ -135,8 +135,9 @@ export async function getFeaturedProducts(): Promise<Product[]> {
 }
 
 export async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
+  console.log(categories);
   try {
-    const response = await axios.get(`${API_BASE_URL}/products/${categorySlug}`);
+    const response = await axios.get(`${API_BASE_URL}/category/${categorySlug}`);
     return response.data;
   } catch (error) {
     console.error(`Error fetching products for category ${categorySlug}:`, error);
