@@ -1,9 +1,6 @@
 import type { Category, Product } from "./types"
 
-
 import axios from 'axios';
-
-const API_BASE_URL = 'http://127.0.0.1:5000';
 
 // Mock data for demonstration purposes
 // In a real application, this would be fetched from a database or API
@@ -110,13 +107,15 @@ const products: Product[] = [
   },
 ]
 
+
+const API_BASE_URL = 'http://127.0.0.1:5000';
+
 // Simulate API delay
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export async function getCategories(): Promise<Category[]> {
   try {
-    const response = await axios.get(`${API_BASE_URL}/categories`);
-    const categories: Category[] = response.data;
+    const response = await axios.get(`${API_BASE_URL}/category`);
     return response.data;
   } catch (error) {
     console.error('Error fetching categories:', error);
@@ -135,7 +134,6 @@ export async function getFeaturedProducts(): Promise<Product[]> {
 }
 
 export async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
-  console.log(categories);
   try {
     const response = await axios.get(`${API_BASE_URL}/category/${categorySlug}`);
     return response.data;

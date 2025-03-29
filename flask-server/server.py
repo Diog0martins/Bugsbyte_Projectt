@@ -69,52 +69,54 @@ def list_users():
 def list_categories():
     return jsonify(categories)
 
-#Communicate with the other contexts
+# Communicate with the other contexts
 @app.route('/product/<product_name>', methods=['GET', 'POST'])
 def get_product(product_name):
     if request.method == 'GET':
-        product_info = products.get(product_name)
+        product_info = next((p for p in products if p.get('name') == product_name), None)
         if product_info:
             return jsonify(product_info)
         else:
             return jsonify({"error": "Product not found"}), 404
     elif request.method == 'POST':
-        if product_name in products:
+        product_info = next((p for p in products if p.get('name') == product_name), None)
+        if product_info:
             data = request.get_json()
-            products[product_name].update(data)
+            product_info.update(data)
             return jsonify({"message": f"Product '{product_name}' updated successfully."})
         else:
             return jsonify({"error": "Product not found"}), 404
-        
+
 @app.route('/user/<user_name>', methods=['GET', 'POST'])
 def get_user(user_name):
     if request.method == 'GET':
-        user_info = users.get(user_name)
+        user_info = next((u for u in users if u.get('username') == user_name), None)
         if user_info:
             return jsonify(user_info)
         else:
             return jsonify({"error": "User not found"}), 404
     elif request.method == 'POST':
-        if user_name in users:
+        user_info = next((u for u in users if u.get('username') == user_name), None)
+        if user_info:
             data = request.get_json()
-            users[user_name].update(data)
+            user_info.update(data)
             return jsonify({"message": f"User '{user_name}' updated successfully."})
         else:
             return jsonify({"error": "User not found"}), 404
 
-
 @app.route('/category/<category_name>', methods=['GET', 'POST'])
 def get_category(category_name):
     if request.method == 'GET':
-        category_info = categories.get(category_name)
+        category_info = next((c for c in categories if c.get('name') == category_name), None)
         if category_info:
             return jsonify(category_info)
         else:
             return jsonify({"error": "Category not found"}), 404
     elif request.method == 'POST':
-        if category_name in categories:
+        category_info = next((c for c in categories if c.get('name') == category_name), None)
+        if category_info:
             data = request.get_json()
-            categories[category_name].update(data)
+            category_info.update(data)
             return jsonify({"message": f"Category '{category_name}' updated successfully."})
         else:
             return jsonify({"error": "Category not found"}), 404
