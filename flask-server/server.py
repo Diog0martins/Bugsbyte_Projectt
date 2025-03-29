@@ -10,9 +10,9 @@ CORS(app)
 with open("routes.json", "r") as file:
     routes = json.load(file)
 
-products = routes.get("Product", {})
-users = routes.get("User", {})
-categories = routes.get("Category", {})
+    products = routes.get("Product", {})
+    users = routes.get("User", {})
+    categories = routes.get("Category", {})
 
 # Function to create dynamic routes
 def create_route(info_type, name, info):
@@ -46,9 +46,9 @@ for user in users:
 for category in categories:
     category_name = category.get('name')
     if category_name:
-        endpoint_name = f"category_{category_name}"
+        endpoint_name = f"{category['slug']}"
         app.add_url_rule(
-            rule=f"/category/{category_name}",
+            rule=f"/category/{category['slug']}",
             endpoint=endpoint_name,
             view_func=create_route("category", category_name, category)
         )
@@ -65,7 +65,7 @@ def list_users():
     return jsonify(users)
 
 # Route to list all categories
-@app.route("/categories")
+@app.route("/category")
 def list_categories():
     return jsonify(categories)
 
