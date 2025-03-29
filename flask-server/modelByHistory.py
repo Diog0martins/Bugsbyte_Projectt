@@ -20,14 +20,16 @@ def train_and_save_model():
 
         # Define the target as the most bought product per user (could change to another target)
         df_final["target_product"] = df_final.drop(columns=["account_no"]).idxmax(axis=1)
-
+        
         # Features are the quantities of products bought, and target is the product to recommend
         X = df_final.drop(columns=["account_no", "target_product"])  # Exclude account_no and target_product
         y = df_final["target_product"]
 
+    
+
         # Split data into train and test sets
         X_train, X_test, y_train, y_test = train_test_split(
-            X, y, test_size=0.2, random_state=42
+            X, y, test_size=0.5, random_state=42
         )
 
         # Train the model
@@ -36,8 +38,13 @@ def train_and_save_model():
             random_state=42,
             class_weight='balanced'
         )
+
         model.fit(X_train, y_train)
 
+        # Save the columns
+        with open("./models/columns.pkl", 'wb') as f:
+            pickle.dump(X.columns.tolist(), f)
+        
         # Save the model
         with open("./models/modelbyHistory.pkl", 'wb') as f:
             pickle.dump(model, f)
@@ -62,3 +69,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
