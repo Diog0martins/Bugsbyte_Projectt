@@ -10,8 +10,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "RetailStore - Shop the Latest Products",
-  description: "Browse our wide selection of products and shop with ease",
+  title: "Continente - Compre os produtos mais frescos",
+  description: "Use a melhor aplicação de retalho",
     generator: 'v0.dev'
 }
 
