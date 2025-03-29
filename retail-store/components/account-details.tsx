@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+// import { Api, getUserDetails } from '../app/API/API';
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,7 +9,8 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function AccountDetails() {
-  const [user, setUser] = useState({
+  // const res = await getUserDetails();
+  const res = {
     account_no: "839942280275",
     family_members: "4",
     age_group: "55-65 anos",
@@ -19,7 +20,8 @@ export default function AccountDetails() {
     name: "João Dom",
     email: "john.doe@example.com",
     phone: "(123) 456-7890",
-  })
+  }
+  const [user, setUser] = useState(res)
 
   const [isEditing, setIsEditing] = useState(false)
   const [formData, setFormData] = useState(user)

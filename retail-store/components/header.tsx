@@ -16,7 +16,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const routes = [
-    { name: "Home", path: "/" },
+    { name: "Início", path: "/" },
     { name: "Produtos Frescos", path: "/category/clothing" },
     { name: "Congelados", path: "/category/electronics" },
     { name: "Bebidas", path: "/category/home-kitchen" },
