@@ -37,7 +37,7 @@ export default function CartItem({ item }: { item: CartItemType }) {
         <Link href={`/product/${item.id}`} className="font-medium hover:text-primary">
           {item.name}
         </Link>
-        <p className="text-muted-foreground text-sm">${item.price.toFixed(2)}</p>
+        <p className="text-muted-foreground text-sm">${item.price}</p>
       </div>
 
       <div className="flex items-center space-x-2">

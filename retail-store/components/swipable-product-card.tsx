@@ -104,7 +104,7 @@ export default function SwipeableProductCard({
       addItem({
         id: currentProduct.id,
         name: currentProduct.name,
-        price: currentProduct.price,
+        price: Number(currentProduct.price),
         image: currentProduct.image,
         quantity: 1,
       })
@@ -195,7 +195,7 @@ export default function SwipeableProductCard({
             src={currentProduct.image || "/placeholder.svg?height=320&width=320"}
             alt={currentProduct.name}
             fill
-            className="object-cover"
+            className="object-cover pointer-events-none"
           />
         </div>
 
@@ -203,7 +203,7 @@ export default function SwipeableProductCard({
           <h3 className="text-lg font-semibold text-black">{currentProduct.name}</h3>
           <p className="text-gray-600 text-sm mb-2">{currentProduct.description}</p>
           <div className="flex justify-between items-center mt-2">
-            <span className="text-xl font-bold text-black">${currentProduct.price.toFixed(2)}</span>
+            <span className="text-xl font-bold text-black">${currentProduct.price}</span>
             <div className="text-sm text-gray-500">Swipe to interact</div>
           </div>
         </div>

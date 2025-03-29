@@ -1,31 +1,31 @@
 {
     "Product" : [
         {
-            "id": 1,
+            "id": "picanha",
             "name": "Picanha",
             "description": "Picanha de primeira qualidade, perfeita para churrasco.",
-            "price": 20.0,
-            "image": "https://images.unsplash.com/photo-1601758123927-4c8f3a2b1d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+            "price": "20.99",
+            "image": "/picanha.jpg",
             "categorySlug": "produtos-frescos",
             "featured": true
         },
 
         {
-            "id": 2,
+            "id": "2",
             "name": "Feijão Preto",
             "description": "Feijão preto de alta qualidade, ideal para feijoada.",
-            "price": 5.0,
-            "image": "https://images.unsplash.com/photo-1601758123927-4c8f3a2b1d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+            "price": "5.00",
+            "image": "/feijao-preto.jpg",
             "categorySlug": "produtos-frescos",
             "featured": false
         },
 
         {
-            "id": 2,
+            "id": "3",
             "name": "Recheio do Fred",
             "description": "Feijão preto de alta qualidade, ideal para feijoada.",
-            "price": 5.0,
-            "image": "https://images.unsplash.com/photo-1601758123927-4c8f3a2b1d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60",
+            "price": "5.00",
+            "image": "/Recheio-do-Fred.png",
             "categorySlug": "bio-eco",
             "featured": false
         }
