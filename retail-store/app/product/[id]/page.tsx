@@ -37,6 +37,7 @@ export default async function ProductPage({
           <AddToCartButton product={product} />
         </div>
       </div>
+      
 
       <div className="my-16">
         <h2 className="text-2xl font-bold mb-6">You might also like</h2>
