@@ -10,7 +10,13 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export default function AccountDetails() {
   const [user, setUser] = useState({
-    name: "John Doe",
+    account_no: "839942280275",
+    family_members: "4",
+    age_group: "55-65 anos",
+    district: "viana do castelo", 
+    segment_cd_lifestyle: "4",
+    segment_cd_lifestage: "4",
+    name: "João Dom",
     email: "john.doe@example.com",
     phone: "(123) 456-7890",
   })
