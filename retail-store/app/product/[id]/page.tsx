@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation"
 import Image from "next/image"
-import { getProduct } from "@/lib/data"
+import { getProduct,  getProducts} from "@/lib/data"
 import AddToCartButton from "@/components/add-to-cart-button"
 import ProductRecommendations from "@/components/product-recommendations"
+import SwipeableProductCard from "@/components/swipable-product-card"
 
 export default async function ProductPage({
   params,
@@ -10,6 +11,7 @@ export default async function ProductPage({
   params: { id: string }
 }) {
   const product = await getProduct(params.id)
+  const products = await getProducts()
 
   if (!product) {
     notFound()
@@ -37,7 +39,10 @@ export default async function ProductPage({
           <AddToCartButton product={product} />
         </div>
       </div>
-      
+
+      <div>
+        < SwipeableProductCard products={products}/>
+      </div>
 
       <div className="my-16">
         <h2 className="text-2xl font-bold mb-6">You might also like</h2>
