@@ -6,12 +6,12 @@ export default function HeroBanner() {
     <div className="relative rounded-lg overflow-hidden">
       <div className="bg-[#eb0205] text-white p-8 md:p-16">
         <div className="max-w-xl">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Summer Collection 2025</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Os nossos produtos!</h1>
           <p className="text-lg md:text-xl mb-8">
-            Discover our latest arrivals and refresh your style with our new summer collection.
+            Descubra os nossos produtos frescos e de alta qualidade.
           </p>
           <Button asChild size="lg" variant="secondary" className="bg-white text-[#eb0205] hover:bg-gray-100">
-            <Link href="/category/clothing">Shop Now</Link>
+            <Link href="/category/clothing">Fazer compras</Link>
           </Button>
         </div>
       </div>
