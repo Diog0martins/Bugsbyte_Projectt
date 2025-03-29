@@ -5,8 +5,8 @@ import type { Category, Product } from "./types"
 
 const categories: Category[] = [
   {
-    slug: "clothing",
-    name: "Clothing",
+    slug: "produtos-frescos",
+    name: "Produtos Frescos",
     description: "Discover the latest fashion trends for all occasions.",
     image: "/placeholder.svg?height=96&width=96",
   },
