@@ -1,5 +1,10 @@
 import type { Category, Product } from "./types"
 
+
+import axios from 'axios';
+
+const API_BASE_URL = 'http://127.0.0.1:5000';
+
 // Mock data for demonstration purposes
 // In a real application, this would be fetched from a database or API
 
@@ -109,8 +114,14 @@ const products: Product[] = [
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 export async function getCategories(): Promise<Category[]> {
-  await delay(500)
-  return categories
+  try {
+    const response = await axios.get(`${API_BASE_URL}/categories`);
+    const categories: Category[] = response.data;
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching categories:', error);
+    return [];
+  }
 }
 
 export async function getCategory(slug: string): Promise<Category | undefined> {
@@ -124,13 +135,23 @@ export async function getFeaturedProducts(): Promise<Product[]> {
 }
 
 export async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
-  await delay(800)
-  return products.filter((product) => product.categorySlug === categorySlug)
+  try {
+    const response = await axios.get(`${API_BASE_URL}/products/${categorySlug}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching products for category ${categorySlug}:`, error);
+    return [];
+  }
 }
 
 export async function getProduct(id: string): Promise<Product | undefined> {
-  await delay(300)
-  return products.find((product) => product.id === id)
+  try {
+    const response = await axios.get(`${API_BASE_URL}/product/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching product with ID ${id}:`, error);
+    return undefined;
+  }
 }
 
 export async function getRelatedProducts(productId: string): Promise<Product[]> {
