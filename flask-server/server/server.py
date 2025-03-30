@@ -11,7 +11,7 @@ import productByInfo as productmodule
 # App class creation, loading data from JSON and routes creation
 app = Flask(__name__)
 
-JSON_FILE = "../routes.json"
+JSON_FILE = "routes.json"
 
 # Load JSON once at the start
 def load_routes():
