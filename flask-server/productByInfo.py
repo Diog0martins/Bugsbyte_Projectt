@@ -9,10 +9,10 @@ import json
 
 def load_model_and_encoders():
     try:
-        with open("../../../models/modelbyInfo.pkl", 'rb') as f:
+        with open("../../models/modelbyInfo.pkl", 'rb') as f:
             model = pickle.load(f)
             
-        with open("../../../models/modelbyInfoEncoder.pkl", 'rb') as f:
+        with open("../../models/modelbyInfoEncoder.pkl", 'rb') as f:
             label_encoders = pickle.load(f)
             
         return model, label_encoders
@@ -62,7 +62,7 @@ def get_products_by_names(predicted_products):
     """
     try:
         # Load routes.json file
-        with open('.././routes.json', 'r', encoding='utf-8') as f:
+        with open('./routes.json', 'r', encoding='utf-8') as f:
             routes_data = json.load(f)
         
         # Get all products from routes.json
@@ -90,7 +90,7 @@ def get_products_by_names(predicted_products):
         return []
 
 def give_user_products(user_data = {
-                        "family_members": 4,
+                        "family_members": 2,
                         "age_group": "18-25 anos",
                         "district": "vila real",
                         "segment_cd_lifestyle": "8",

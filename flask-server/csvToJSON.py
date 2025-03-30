@@ -10,13 +10,26 @@ dicionario_de_categorias = {
     "frutas": ["1501 - frutas"],
 }
 
+dicionario_de_imagens ={
+    "/vaquinha.jpeg": ["1101 - bovino", "1104 - aves e coelho"],
+    "/peixe.jpeg": ["1201 - peixe,marisco fresco"],
+    "/temperofeliz.jpg": ["1002 - ingredientes básicos"],
+    "/frutinhafeliz.jpg": ["1501 - frutas"],
+}
 def defineCategory(code):
     for category, values in dicionario_de_categorias.items():
-        print(code)
         if code in values:
             return category
     # Return a default category if no match is found
     return "uncategorized"
+
+def defineImage(code):
+    for category, values in dicionario_de_imagens.items():
+        if code in values:
+            return category
+    # Return a default category if no match is found
+    return None
+
 
 def csv_to_json(csv_filename, json_filename):
     csv_path = os.path.join(os.path.dirname(__file__), "../../csv", csv_filename)
@@ -43,7 +56,7 @@ def csv_to_json(csv_filename, json_filename):
                     "name": row.get("product_dsc", "unknown_name"),
                     "description": None,
                     "price": random.randint(1,20),
-                    "image": None,
+                    "image": defineImage(row.get("cat_dsc_ext","unknown_category")),
                     "categorySlug": defineCategory(row.get("cat_dsc_ext", "unknown_category")),
                     "featured": False,
                     "recomended" : False, 
