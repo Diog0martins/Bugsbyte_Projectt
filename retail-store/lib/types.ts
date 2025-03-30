@@ -23,3 +23,15 @@ export interface CartItem {
   quantity: number
 }
 
+export interface User {
+  "routename": "João Dom",
+  "email": "john.doe@example.com",
+  "phone": "(123) 456-7890",
+  "account_no": "839942280271",
+  "family_members": "4",
+  "age_group": "55-65 anos",
+  "district": "viana do castelo", 
+  "segment_cd_lifestyle": "4",
+  "segment_cd_lifestage": "4"
+}
+

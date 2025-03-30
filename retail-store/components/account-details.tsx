@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-// import { Api, getUserDetails } from '../app/API/API';
+import { getUserByRoutename } from '../lib/api';
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -9,18 +9,8 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function AccountDetails() {
-  // const res = await getUserDetails();
-  const res = {
-    account_no: "839942280275",
-    family_members: "4",
-    age_group: "55-65 anos",
-    district: "viana do castelo", 
-    segment_cd_lifestyle: "4",
-    segment_cd_lifestage: "4",
-    name: "João Dom",
-    email: "john.doe@example.com",
-    phone: "(123) 456-7890",
-  }
+  const res = getUserByRoutename({routeName: "JoaoFernandes"});
+  console.log(res);
   const [user, setUser] = useState(res)
 
   const [isEditing, setIsEditing] = useState(false)
@@ -68,7 +58,7 @@ export default function AccountDetails() {
           <div className="space-y-4">
             <div>
               <h3 className="text-sm font-medium text-muted-foreground">Full Name</h3>
-              <p>{user.name}</p>
+              <p>{user.routename}</p>
             </div>
 
             <div>

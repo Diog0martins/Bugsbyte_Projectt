@@ -9,7 +9,7 @@ import Providers from "@/components/providers";
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Continente - Compre os produtos mais frescos",
+  title: "Continente",
   description: "Use a melhor aplicação de retalho",
   generator: 'v0.dev'
 }

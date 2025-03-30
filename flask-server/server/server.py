@@ -88,13 +88,13 @@ def get_product(product_id):
 @app.route('/user/<user_name>', methods=['GET', 'POST'])
 def get_user(user_name):
     if request.method == 'GET':
-        user_info = next((u for u in users if u.get('username') == user_name), None)
+        user_info = next((u for u in users if u.get('routename') == user_name), None)
         if user_info:
             return jsonify(user_info)
         else:
             return jsonify({"error": "User not found"}), 404
     elif request.method == 'POST':
-        user_info = next((u for u in users if u.get('username') == user_name), None)
+        user_info = next((u for u in users if u.get('routename') == user_name), None)
         if user_info:
             data = request.get_json()
             user_info.update(data)

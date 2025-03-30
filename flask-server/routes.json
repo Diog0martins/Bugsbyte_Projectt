@@ -33,11 +33,38 @@
 
     "User" : [
         {
-            "routename": "JoaoFernandes"
+            "routename": "João Dom",
+            "email": "john.doe@example.com",
+            "phone": "(123) 456-7890",
+            "account_no": "839942280271",
+            "family_members": "4",
+            "age_group": "55-65 anos",
+            "district": "viana do castelo", 
+            "segment_cd_lifestyle": "4",
+            "segment_cd_lifestage": "4"
+        },
+        {
+            "routename": "JoaoFernandes",
+            "email": "JoaoFernandes@gmail.com",
+            "phone": "123456789",
+            "account_no": "839942280275",
+            "family_members": "4",
+            "age_group": "55-65 anos",
+            "district": "viana do castelo", 
+            "segment_cd_lifestyle": "4",
+            "segment_cd_lifestage": "4"
         },
 
         {
-            "routename": "GabrielDantas"
+            "routename": "GabrielDantas",
+            "email": "JoaoFernandes@gmail.com",
+            "phone": "123456789",
+            "account_no": "839942280273",
+            "family_members": "4",
+            "age_group": "55-65 anos",
+            "district": "viana do castelo", 
+            "segment_cd_lifestyle": "4",
+            "segment_cd_lifestage": "4"
         }
     ],
     
