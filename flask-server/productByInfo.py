@@ -9,10 +9,10 @@ import json
 
 def load_model_and_encoders():
     try:
-        with open("../../models/modelbyInfo.pkl", 'rb') as f:
+        with open("../../../models/modelbyInfo.pkl", 'rb') as f:
             model = pickle.load(f)
             
-        with open("../../models/modelbyInfoEncoder.pkl", 'rb') as f:
+        with open("../../../models/modelbyInfoEncoder.pkl", 'rb') as f:
             label_encoders = pickle.load(f)
             
         return model, label_encoders
@@ -62,7 +62,7 @@ def get_products_by_names(predicted_products):
     """
     try:
         # Load routes.json file
-        with open('./routes.json', 'r', encoding='utf-8') as f:
+        with open('.././routes.json', 'r', encoding='utf-8') as f:
             routes_data = json.load(f)
         
         # Get all products from routes.json
@@ -96,16 +96,31 @@ def give_user_products(user_data = {
                         "segment_cd_lifestyle": "8",
                         "segment_cd_lifestage": "6"
                 }
-):
+):  
+    
+    data = user_data.get_json()
+    
+    user_data2 = {
+        "family_members": int(data["family_members"]),
+        "age_group": data["age_group"],
+        "district": data["district"],
+        "segment_cd_lifestyle": data["segment_cd_lifestyle"],
+        "segment_cd_lifestage": data["segment_cd_lifestage"]
+    }
+    
+    print(data["family_members"])
+
     try:
         model, label_encoders = load_model_and_encoders()           
 
 
-        predicted_product_names = predict_user_purchase(model, label_encoders, user_data, top_n=20)
+        predicted_product_names = predict_user_purchase(model, label_encoders, user_data2, top_n=20)
+        
+        return predicted_product_names
         
         # Get complete product information for the predicted products
         recommended_products = get_products_by_names(predicted_product_names)
-
+        print(recommended_products)
         return recommended_products
         
     except FileNotFoundError:
