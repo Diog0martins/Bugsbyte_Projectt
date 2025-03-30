@@ -10,9 +10,9 @@ export default function AccountPage() {
 
       <Tabs defaultValue="details" className="w-full">
         <TabsList className="grid w-full grid-cols-3 mb-8">
-          <TabsTrigger value="details">Account Details</TabsTrigger>
-          <TabsTrigger value="orders">Order History</TabsTrigger>
-          <TabsTrigger value="addresses">Saved Addresses</TabsTrigger>
+          <TabsTrigger value="details">Details</TabsTrigger>
+          <TabsTrigger value="orders">Orders</TabsTrigger>
+          <TabsTrigger value="addresses">Addresses</TabsTrigger>
         </TabsList>
 
         <TabsContent value="details">

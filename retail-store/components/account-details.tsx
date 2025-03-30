@@ -7,20 +7,22 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { getUserByRoutename, getUserAccNo } from '../lib/api';
+import { getUserByRoutename, getUserAccNo } from '../lib/data';
 
 export default function AccountDetails() {
-  const [user, setUser] = useState<any>(null) // Estado para armazenar o usuário
   const [isLoading, setIsLoading] = useState(true) // Estado de loading
   const [isEditing, setIsEditing] = useState(false)
-  const [formData, setFormData] = useState<any>(null)
+  const [user, setUser] = useState<User | null>(null);
+  const [formData, setFormData] = useState<User | null>(null);  
+
   
   
   const fetchUserData = async () => {
     setIsLoading(true)
     try {
-      const res = await getUserByRoutename({ routeName: "JoaoFernandes" }) // Aguarda resposta da API
-      console.log(res) // Debugging
+      const res = await getUserByRoutename("GabrielDantas") // Aguarda resposta da API
+      console.log("API Response:",res); // Debugging
+      
       setUser(res)
       setFormData(res) // Inicializa o formulário com os dados do usuário
     } catch (error) {
@@ -30,16 +32,21 @@ export default function AccountDetails() {
     }
   }
 
-  // useEffect para carregar os dados ao montar o componente
   useEffect(() => {
-    fetchUserData()
-  }, [])
+    console.log("Fetching user data...");
+    fetchUserData();
+  }, []);
+
+  // useEffect para carregar os dados ao montar o componente
 
   // Atualiza os dados conforme o usuário digita no formulário
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
-    setFormData((prev: User) => ({ ...prev, [name]: value }))
-  }
+    setFormData((prev) => ({
+      ...prev, // Use spread operator safely
+      [name]: value,
+    }) as User); // Tell TypeScript the resulting object is a `User`
+  };
 
   // Salva as mudanças
   const handleSubmit = (e: React.FormEvent) => {
