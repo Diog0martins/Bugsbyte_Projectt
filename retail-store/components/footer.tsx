@@ -14,23 +14,23 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Categorias</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/category/clothing" className="text-muted-foreground hover:text-[#eb0205]">
-                  Clothing
+                <Link href="/category/frutas" className="text-muted-foreground hover:text-[#eb0205]">
+                  Frutas
                 </Link>
               </li>
               <li>
-                <Link href="/category/electronics" className="text-muted-foreground hover:text-[#eb0205]">
-                  Electronics
+                <Link href="/category/carne" className="text-muted-foreground hover:text-[#eb0205]">
+                  Carne
                 </Link>
               </li>
               <li>
-                <Link href="/category/home-kitchen" className="text-muted-foreground hover:text-[#eb0205]">
-                  Home & Kitchen
+                <Link href="/category/peixe" className="text-muted-foreground hover:text-[#eb0205]">
+                  Peixe
                 </Link>
               </li>
               <li>
-                <Link href="/category/beauty" className="text-muted-foreground hover:text-[#eb0205]">
-                  Beauty
+                <Link href="/category/ingredientes-basicos" className="text-muted-foreground hover:text-[#eb0205]">
+                  Ingredientes Básicos
                 </Link>
               </li>
             </ul>
