@@ -48,23 +48,3 @@ def predict_user_purchase_history(model, feature_columns, shopping_cart, top_n=5
 
     return top_products
 
-
-def main():
-    try:
-        
-        model,columns = load_model_and_columns()
-
-        shopping_cart = {
-        "ESPARGUETE CONTINENTE 500GR": 50,
-        }
-
-        predicted_products = predict_user_purchase_history(model, columns,shopping_cart, top_n=5)
-        print(f"Os produtos mais prováveis que o utilizador comprará são: {predicted_products}")
-        
-    except FileNotFoundError:
-        print("Error: File not found. Check the file path.")
-    except Exception as e:
-        print(f"Unexpected error: {e}")
-
-if __name__ == "__main__":
-    main()
