@@ -105,7 +105,7 @@ def give_user_products(user_data = {
         
         # Get complete product information for the predicted products
         recommended_products = get_products_by_names(predicted_product_names)
-        print(recommended_products)
+
         return recommended_products
         
     except FileNotFoundError:

@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 # Load data from JSON file
-with open("routes.json", "r") as file:
+with open("../routes.json", "r") as file:
     routes = json.load(file)
 
     products = routes.get("Product", {})
