@@ -7,11 +7,12 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import productByInfo as productmodule
+import productByHistory as productmodule2
 
 # App class creation, loading data from JSON and routes creation
 app = Flask(__name__)
 
-JSON_FILE = "routes.json"
+JSON_FILE = "../routes.json"
 
 # Load JSON once at the start
 def load_routes():
@@ -89,27 +90,35 @@ def list_products():
 def update_product():
     data = request.json  # Extract JSON data
 
-    if not data or "routename" not in data:
-        return jsonify({"error": "Missing 'routename' in request"}), 400
+    if (data["routename"]):
+        username = data["routename"]
 
-    username = data["routename"]
+        # Check if username exists in users
+        user_exists = any(user["routename"] == username for user in users)
 
-    # Check if username exists in users
-    user_exists = any(user["routename"] == username for user in users)
+        if not user_exists:
+            return jsonify({"error": f"User '{username}' not found"}), 404
 
-    if not user_exists:
-        return jsonify({"error": f"User '{username}' not found"}), 404
+        user_component = get_user_component(username)
 
-    user_component = get_user_component(username)
+        featured_products = productmodule.give_user_products(user_component)
+        
+        for product in products:
+            if product["name"] in featured_products:
+                product["featured"] = True
 
-    featured_products = productmodule.give_user_products(user_component)
+        return jsonify({"message": "Product updated", "updated_product": product})
     
-    for product in products:
-        if product["name"] in featured_products:
-            product["featured"] = True
+    else:
+        
+        products_info = next((product for product in products if product["name"] == data["name"]), None)
+        if products_info:
+            recommended_products = productmodule2.give_user_recommendations(data)
 
-    return jsonify({"message": "Product updated", "updated_product": product})
-
+            return jsonify(recommended_products)
+        else:
+            return jsonify({"error": "Product not found"}), 404
+        
 
 # Route to list all users
 @app.route("/user")

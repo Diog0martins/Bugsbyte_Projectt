@@ -42,11 +42,11 @@ def train_and_save_model():
         model.fit(X_train, y_train)
 
         # Save the columns
-        with open("./models/columns.pkl", 'wb') as f:
+        with open("../../models/columns.pkl", 'wb') as f:
             pickle.dump(X.columns.tolist(), f)
         
         # Save the model
-        with open("./models/modelbyHistory.pkl", 'wb') as f:
+        with open("../../models/modelbyHistory.pkl", 'wb') as f:
             pickle.dump(model, f)
             
         print("Model trained and saved successfully.")
