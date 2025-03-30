@@ -19,7 +19,7 @@ def defineCategory(code):
     return "uncategorized"
 
 def csv_to_json(csv_filename, json_filename):
-    csv_path = os.path.join(os.path.dirname(__file__), "../csvs", csv_filename)
+    csv_path = os.path.join(os.path.dirname(__file__), "../../csv", csv_filename)
     json_path = os.path.join(os.path.dirname(__file__), json_filename)
 
     with open(csv_path, mode='r', encoding='utf-8') as file:
@@ -45,7 +45,8 @@ def csv_to_json(csv_filename, json_filename):
                     "price": random.randint(1,20),
                     "image": None,
                     "categorySlug": defineCategory(row.get("cat_dsc_ext", "unknown_category")),
-                    "featured": False, 
+                    "featured": False,
+                    "recomended" : False, 
                 }
                 json_data.append(dicionario)
             except Exception as e:

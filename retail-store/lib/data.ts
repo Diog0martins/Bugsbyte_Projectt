@@ -27,6 +27,11 @@ export async function getCategory(slug: string): Promise<Category | undefined> {
 }
 
 export async function getFeaturedProducts(): Promise<Product[]> {
+  const data = { routename: "João Dom" };
+  const request = await axios.post(`${API_BASE_URL}/product`, data, {
+    headers: { "Content-Type": "application/json" },
+  });
+  
   const products_response = await axios.get(`${API_BASE_URL}/product`);
   const products: Product[] = products_response.data;
   return products.filter((product) => product.featured)
