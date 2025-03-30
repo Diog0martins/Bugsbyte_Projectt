@@ -101,16 +101,8 @@ def update_product():
         return jsonify({"error": f"User '{username}' not found"}), 404
 
     user_component = get_user_component(username)
-    
-    print("================================================")
-    for item in user_component.json:
-        print(item)
-    print("================================================")
 
     featured_products = productmodule.give_user_products(user_component)
-
-    print("vou embora")
-    print(featured_products)
     
     for product in products:
         if product["name"] in featured_products:
