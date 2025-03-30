@@ -3771,8 +3771,12 @@
             "price": 3,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "3780282",
@@ -4331,8 +4335,12 @@
             "price": 10,
             "image": "/vaquinha.jpeg",
             "categorySlug": "carne",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "7475654",
@@ -6111,8 +6119,12 @@
             "price": 8,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "7191221",
@@ -6511,8 +6523,12 @@
             "price": 6,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "7445542",
@@ -6581,8 +6597,12 @@
             "price": 17,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "7102076",
@@ -7821,8 +7841,12 @@
             "price": 10,
             "image": "/frutinhafeliz.jpg",
             "categorySlug": "frutas",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "6556965",
@@ -9881,8 +9905,12 @@
             "price": 2,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "2003973",
@@ -10211,8 +10239,12 @@
             "price": 15,
             "image": "/frutinhafeliz.jpg",
             "categorySlug": "frutas",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "7414222",
@@ -10661,8 +10693,12 @@
             "price": 12,
             "image": "/vaquinha.jpeg",
             "categorySlug": "carne",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "7458165",
@@ -11341,8 +11377,12 @@
             "price": 16,
             "image": "/vaquinha.jpeg",
             "categorySlug": "carne",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "5724846",
@@ -14101,8 +14141,12 @@
             "price": 20,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "5043428",
@@ -16081,8 +16125,12 @@
             "price": 19,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "7021982",
@@ -16901,8 +16949,12 @@
             "price": 16,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "5497303",
@@ -17091,8 +17143,12 @@
             "price": 10,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "2003320",
@@ -17171,8 +17227,12 @@
             "price": 19,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "4390873",
@@ -18461,8 +18521,12 @@
             "price": 16,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "7454966",
@@ -18641,8 +18705,12 @@
             "price": 20,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "6571892",
@@ -19471,8 +19539,12 @@
             "price": 16,
             "image": "/frutinhafeliz.jpg",
             "categorySlug": "frutas",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "6617929",
@@ -20211,8 +20283,12 @@
             "price": 4,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "5731450",
@@ -20451,8 +20527,12 @@
             "price": 17,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "6903967",
@@ -24541,8 +24621,12 @@
             "price": 11,
             "image": "/temperofeliz.jpg",
             "categorySlug": "ingredientes-basicos",
+<<<<<<< HEAD
             "featured": false,
             "recomended": false
+=======
+            "featured": true
+>>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
         },
         {
             "id": "6180148",

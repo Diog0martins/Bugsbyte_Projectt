@@ -1,4 +1,4 @@
-import type { Category, Product } from "./types"
+import type { Category, Product, User } from "./types"
 
 import axios from 'axios';
 
@@ -47,6 +47,30 @@ export async function getFeaturedProducts(): Promise<Product[]> {
     return [];
   }
 } */
+export async function getUserByRoutename(id: string):Promise<User> {
+  try {
+    console.log("API Response"); // Debugging response
+    const response = await axios.get(`${API_BASE_URL}/user/${id}`);
+    console.log("API Response:", response.data); // Debugging response
+
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching user:", error);
+    throw error;
+  }
+}
+  
+  export async function getUserAccNo(id : string) {
+    try{
+      const response = await axios.get(`${API_BASE_URL}/user/${id}`);
+      return response.data.product["account_no"];
+    } catch (error) {
+      console.error(`Error fetching product with ID ${id}:`, error);
+      return undefined;
+  
+    }
+  }
+
 
 export async function getProductsByCategory(id: string): Promise<Product[]> {
     const products_response = await axios.get(`${API_BASE_URL}/product`);
