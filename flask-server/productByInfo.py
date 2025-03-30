@@ -9,10 +9,10 @@ import json
 
 def load_model_and_encoders():
     try:
-        with open("../../models/modelbyInfo.pkl", 'rb') as f:
+        with open("../../../models/modelbyInfo.pkl", 'rb') as f:
             model = pickle.load(f)
             
-        with open("../../models/modelbyInfoEncoder.pkl", 'rb') as f:
+        with open("../../../models/modelbyInfoEncoder.pkl", 'rb') as f:
             label_encoders = pickle.load(f)
             
         return model, label_encoders
