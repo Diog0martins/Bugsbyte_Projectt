@@ -1,31 +1,59 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import type React from "react"
-import { getUserByRoutename, getUserAccNo } from '../lib/api';
-import { useState } from "react"
+import type { User } from "@/lib/types"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { getUserByRoutename, getUserAccNo } from '../lib/api';
 
 export default function AccountDetails() {
-  const res = getUserByRoutename({routeName: "JoaoFernandes"});
-  console.log(getUserAccNo({routeName: "JoaoFernandes"}))
-  console.log(res);
-  const [user, setUser] = useState(res)
-
+  const [user, setUser] = useState<any>(null) // Estado para armazenar o usuário
+  const [isLoading, setIsLoading] = useState(true) // Estado de loading
   const [isEditing, setIsEditing] = useState(false)
-  const [formData, setFormData] = useState(user)
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+  const [formData, setFormData] = useState<any>(null)
+  
+  
+  const fetchUserData = async () => {
+    setIsLoading(true)
+    try {
+      const res = await getUserByRoutename({ routeName: "JoaoFernandes" }) // Aguarda resposta da API
+      console.log(res) // Debugging
+      setUser(res)
+      setFormData(res) // Inicializa o formulário com os dados do usuário
+    } catch (error) {
+      console.error("Erro ao buscar usuário:", error)
+    } finally {
+      setIsLoading(false) // Para o loading, independentemente do sucesso ou erro
+    }
   }
 
+  // useEffect para carregar os dados ao montar o componente
+  useEffect(() => {
+    fetchUserData()
+  }, [])
+
+  // Atualiza os dados conforme o usuário digita no formulário
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target
+    setFormData((prev: User) => ({ ...prev, [name]: value }))
+  }
+
+  // Salva as mudanças
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setUser(formData)
     setIsEditing(false)
+  }
+
+  if (isLoading) {
+    return <p>Loading...</p> // Mostra "Loading" enquanto os dados estão sendo buscados
+  }
+
+  if (!user) {
+    return <p>User not found</p> // Caso o usuário não seja encontrado
   }
 
   return (

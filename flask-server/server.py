@@ -1,16 +1,45 @@
 from flask import Flask, jsonify, request
 import json
+import atexit
+import sys
+import os
+# Add the parent directory to the Python path to resolve the relative import
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-#App class creation, loading data from JSON and routes creation
+import productByInfo as productmodule
+
+# App class creation, loading data from JSON and routes creation
 app = Flask(__name__)
 
-# Load data from JSON file
-with open("../routes.json", "r") as file:
-    routes = json.load(file)
+JSON_FILE = "../routes.json"
 
-    products = routes.get("Product", {})
-    users = routes.get("User", {})
-    categories = routes.get("Category", {})
+# Load JSON once at the start
+def load_routes():
+    """Load routes from JSON file."""
+    with open(JSON_FILE, "r") as file:
+        return json.load(file)
+
+# Save updated routes to JSON file
+def save_routes(routes):
+    """Save updated routes back to JSON file."""
+    with open(JSON_FILE, "w") as file:
+        json.dump(routes, file, indent=4)
+
+# Load the data into memory
+routes = load_routes()
+products = routes.get("Product", [])
+users = routes.get("User", [])
+categories = routes.get("Category", {})
+
+def get_user_component(user_name):
+    user_info = next((u for u in users if u.get('routename') == user_name), None)
+    
+    if user_info:
+        # Remove the 'routename', 'email', and 'phone' keys
+        user_info = {key: value for key, value in user_info.items() if key not in ['routename', 'email', 'phone', 'account_no']}
+        return jsonify(user_info)
+    else:
+        return jsonify({"error": "User not found"}), 404
 
 # Function to create dynamic routes
 def create_route(info_type, name, info):
@@ -51,11 +80,44 @@ for category in categories:
             view_func=create_route("category", category_name, category)
         )
 
-
 # Route to list all products
-@app.route("/product")
+@app.route("/product", methods=['GET'])
 def list_products():
     return jsonify(products)
+
+@app.route("/product", methods=['POST'])
+def update_product():
+    data = request.json  # Extract JSON data
+
+    if not data or "routename" not in data:
+        return jsonify({"error": "Missing 'routename' in request"}), 400
+
+    username = data["routename"]
+
+    # Check if username exists in users
+    user_exists = any(user["routename"] == username for user in users)
+
+    if not user_exists:
+        return jsonify({"error": f"User '{username}' not found"}), 404
+
+    user_component = get_user_component(username)
+    
+    print("================================================")
+    for item in user_component.json:
+        print(item)
+    print("================================================")
+
+    featured_products = productmodule.give_user_products(user_component)
+
+    print("vou embora")
+    print(featured_products)
+    
+    for product in products:
+        if product["name"] in featured_products:
+            product["featured"] = True
+
+    return jsonify({"message": "Product updated", "updated_product": product})
+
 
 # Route to list all users
 @app.route("/user")
@@ -84,11 +146,11 @@ def update_item(collection, key, value, data):
 
 # Product Routes
 @app.route('/product/<product_id>', methods=['GET'])
-def get_product(product_id):
+def get_product_by_id(product_id):
     return get_item(products, 'id', product_id)
 
 @app.route('/product/<product_id>', methods=['POST'])
-def update_product(product_id):
+def update_product_by_id(product_id):
     return update_item(products, 'id', product_id, request.get_json())
 
 # User Routes
@@ -122,6 +184,11 @@ def get_category(category_name):
 def update_category(category_name):
     return update_item(categories, 'name', category_name, request.get_json())
 
+# Function to save changes at shutdown
+def save_on_exit():
+    save_routes(routes)
+
+atexit.register(save_on_exit)
 
 if __name__ == "__main__":
     app.run(debug=True)
