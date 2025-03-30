@@ -24,14 +24,14 @@ export interface CartItem {
 }
 
 export interface User {
-  "routename": "João Dom",
-  "email": "john.doe@example.com",
-  "phone": "(123) 456-7890",
-  "account_no": "839942280271",
-  "family_members": "4",
-  "age_group": "55-65 anos",
-  "district": "viana do castelo", 
-  "segment_cd_lifestyle": "4",
-  "segment_cd_lifestage": "4"
+  routename: string
+  email: string
+  phone: string
+  account_no: string
+  family_members: string
+  age_group: string
+  district: string
+  segment_cd_lifestyle: string
+  segment_cd_lifestage: string
 }
 

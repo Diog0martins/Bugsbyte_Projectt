@@ -67,25 +67,32 @@ def list_users():
 def list_categories():
     return jsonify(categories)
 
-# Communicate with the other contexts
-@app.route('/product/<product_id>', methods=['GET', 'POST'])
-def get_product(product_id):
-    if request.method == 'GET':
-        product_info = next((p for p in products if p.get('id') == product_id), None)
-        if product_info:
-            return jsonify(product_info)
-        else:
-            return jsonify({"error": "Product not found"}), 404
-    elif request.method == 'POST':
-        product_info = next((p for p in products if p.get('id') == product_id), None)
-        if product_info:
-            data = request.get_json()
-            product_info.update(data)
-            return jsonify({"message": f"Product '{product_id}' updated successfully."})
-        else:
-            return jsonify({"error": "Product not found"}), 404
+def get_item(collection, key, value):
+    """Retrieve an item from a collection based on a key-value pair."""
+    item = next((entry for entry in collection if entry.get(key) == value), None)
+    if item:
+        return jsonify(item)
+    return jsonify({"error": f"{key.capitalize()} not found"}), 404
 
-@app.route('/user/<user_name>', methods=['GET', 'POST'])
+def update_item(collection, key, value, data):
+    """Update an item in a collection if it exists."""
+    item = next((entry for entry in collection if entry.get(key) == value), None)
+    if item:
+        item.update(data)
+        return jsonify({"message": f"{key.capitalize()} '{value}' updated successfully."})
+    return jsonify({"error": f"{key.capitalize()} not found"}), 404
+
+# Product Routes
+@app.route('/product/<product_id>', methods=['GET'])
+def get_product(product_id):
+    return get_item(products, 'id', product_id)
+
+@app.route('/product/<product_id>', methods=['POST'])
+def update_product(product_id):
+    return update_item(products, 'id', product_id, request.get_json())
+
+# User Routes
+@app.route('/user/<user_name>', methods=['GET'])
 def get_user(user_name):
     if request.method == 'GET':
         user_info = next((u for u in users if u.get('routename') == user_name), None)
@@ -102,22 +109,18 @@ def get_user(user_name):
         else:
             return jsonify({"error": "User not found"}), 404
 
-@app.route('/category/<category_name>', methods=['GET', 'POST'])
+@app.route('/user/<user_name>', methods=['POST'])
+def update_user(user_name):
+    return update_item(users, 'username', user_name, request.get_json())
+
+# Category Routes
+@app.route('/category/<category_name>', methods=['GET'])
 def get_category(category_name):
-    if request.method == 'GET':
-        category_info = next((c for c in categories if c.get('name') == category_name), None)
-        if category_info:
-            return jsonify(category_info)
-        else:
-            return jsonify({"error": "Category not found"}), 404
-    elif request.method == 'POST':
-        category_info = next((c for c in categories if c.get('name') == category_name), None)
-        if category_info:
-            data = request.get_json()
-            category_info.update(data)
-            return jsonify({"message": f"Category '{category_name}' updated successfully."})
-        else:
-            return jsonify({"error": "Category not found"}), 404
+    return get_item(categories, 'name', category_name)
+
+@app.route('/category/<category_name>', methods=['POST'])
+def update_category(category_name):
+    return update_item(categories, 'name', category_name, request.get_json())
 
 
 if __name__ == "__main__":

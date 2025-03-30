@@ -28,7 +28,6 @@ export async function getCategory(slug: string): Promise<Category | undefined> {
 }
 
 export async function getFeaturedProducts(): Promise<Product[]> {
-  await delay(800)
   const products_response = await axios.get(`${API_BASE_URL}/product`);
   const products: Product[] = products_response.data;
   return products.filter((product) => product.featured)
@@ -72,7 +71,6 @@ export async function getProducts() {
 
 
 export async function getRelatedProducts(productId: string): Promise<Product[]> {
-  await delay(500)
   const products_response = await axios.get(`${API_BASE_URL}/product`);
   const products: Product[] = products_response.data;
   const product = products.find((p) => p.id === productId)
