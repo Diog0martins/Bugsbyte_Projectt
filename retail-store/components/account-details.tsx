@@ -1,29 +1,5 @@
 "use client";
 
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-import type React from "react";
-import type { User } from "@/lib/types";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { getUserByRoutename, getUserAccNo } from "../lib/api";
-
-export default function AccountDetails() {
-  const [user, setUser] = useState<any>(null); // Estado para armazenar o usuário
-  const [isLoading, setIsLoading] = useState(true); // Estado de loading
-  const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState<any>(null);
-
-=======
 import { useState, useEffect } from "react"
 import type React from "react"
 import type { User } from "@/lib/types"
@@ -41,22 +17,14 @@ export default function AccountDetails() {
 
   
   
->>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
   const fetchUserData = async () => {
     setIsLoading(true);
     try {
-<<<<<<< HEAD
-      const res = await getUserByRoutename({ routeName: "JoaoFernandes" }); // Aguarda resposta da API
-      console.log(res); // Debugging
-      setUser(res);
-      setFormData(res); // Inicializa o formulário com os dados do usuário
-=======
       const res = await getUserByRoutename("GabrielDantas") // Aguarda resposta da API
       console.log("API Response:",res); // Debugging
       
       setUser(res)
       setFormData(res) // Inicializa o formulário com os dados do usuário
->>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
     } catch (error) {
       console.error("Erro ao buscar usuário:", error);
     } finally {
@@ -65,15 +33,6 @@ export default function AccountDetails() {
   };
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetchUserData();
-  }, []);
-
-  // Atualiza os dados conforme o usuário digita no formulário
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev: User) => ({ ...prev, [name]: value }));
-=======
     console.log("Fetching user data...");
     fetchUserData();
   }, []);
@@ -87,7 +46,6 @@ export default function AccountDetails() {
       ...prev, // Use spread operator safely
       [name]: value,
     }) as User); // Tell TypeScript the resulting object is a `User`
->>>>>>> 201f2a4a46f1673c18bd23e6d32ac45036c30f93
   };
 
   // Salva as mudanças
