@@ -41,29 +41,29 @@
   "Category": [
     {
       "slug": "ingredientes-basicos",
-      "name": "Produtos Frescos",
-      "description": "Produtos Frescos",
+      "name": "Ingredientes Básicos",
+      "description": "Bons ingredientes, locais e inadulterados",
       "image?": "https://images.unsplash.com/photo-1601758123927-4c8f3a2b1d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
     },
 
     {
-      "slug": "congelados",
-      "name": "Congelados",
-      "description": "Congelados",
+      "slug": "frutas",
+      "name": "Frutas",
+      "description": "Fruta Fixe que enFarta",
       "image?": "https://images.unsplash.com/photo-1601758123927-4c8f3a2b1d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
     },
 
     {
-      "slug": "bebidas",
-      "name": "Bebidas",
-      "description": "Bebidas",
+      "slug": "carne",
+      "name": "Carne",
+      "description": "Adoro carne :D",
       "image?": "https://images.unsplash.com/photo-1601758123927-4c8f3a2b1d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
     },
 
     {
-      "slug": "bio-eco",
-      "name": "Bio & Eco",
-      "description": "Bio & Eco",
+      "slug": "peixe",
+      "name": "Peixe",
+      "description": "Tolero peixe >:(",
       "image?": "https://images.unsplash.com/photo-1601758123927-4c8f3a2b1d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"
     }
   ],
