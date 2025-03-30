@@ -9,10 +9,10 @@ import pickle
 
 def load_model_and_columns():
     try:
-        with open("./models/modelbyHistory.pkl", 'rb') as f:
+        with open("../../models/modelbyHistory.pkl", 'rb') as f:
             model = pickle.load(f)
 
-        with open("./models/columns.pkl", 'rb') as f:
+        with open("../../models/columns.pkl", 'rb') as f:
             columns = pickle.load(f)
 
         return model, columns
@@ -48,3 +48,12 @@ def predict_user_purchase_history(model, feature_columns, shopping_cart, top_n=5
 
     return top_products
 
+def give_user_recommendations(shopping_cart):
+    model, columns = load_model_and_columns()
+    if model is None or columns is None:
+        return {"error": "Model not loaded."}
+
+    # Preencher o vetor com as quantidades dos produtos no carrinho
+    recommendations = predict_user_purchase_history(model, columns, shopping_cart)
+    
+    return recommendations
