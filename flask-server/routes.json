@@ -3401,7 +3401,7 @@
             "price": 1,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "3780282",
@@ -3905,7 +3905,7 @@
             "price": 13,
             "image": null,
             "categorySlug": "carne",
-            "featured": false
+            "featured": true
         },
         {
             "id": "7475654",
@@ -5507,7 +5507,7 @@
             "price": 16,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "7191221",
@@ -5867,7 +5867,7 @@
             "price": 5,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "7445542",
@@ -5930,7 +5930,7 @@
             "price": 2,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "7102076",
@@ -7046,7 +7046,7 @@
             "price": 18,
             "image": null,
             "categorySlug": "frutas",
-            "featured": false
+            "featured": true
         },
         {
             "id": "6556965",
@@ -8900,7 +8900,7 @@
             "price": 4,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "2003973",
@@ -9197,7 +9197,7 @@
             "price": 8,
             "image": null,
             "categorySlug": "frutas",
-            "featured": false
+            "featured": true
         },
         {
             "id": "7414222",
@@ -9602,7 +9602,7 @@
             "price": 14,
             "image": null,
             "categorySlug": "carne",
-            "featured": false
+            "featured": true
         },
         {
             "id": "7458165",
@@ -10214,7 +10214,7 @@
             "price": 11,
             "image": null,
             "categorySlug": "carne",
-            "featured": false
+            "featured": true
         },
         {
             "id": "5724846",
@@ -12698,7 +12698,7 @@
             "price": 11,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "5043428",
@@ -14480,7 +14480,7 @@
             "price": 18,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "7021982",
@@ -15218,7 +15218,7 @@
             "price": 18,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "5497303",
@@ -15389,7 +15389,7 @@
             "price": 4,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "2003320",
@@ -15461,7 +15461,7 @@
             "price": 15,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "4390873",
@@ -16622,7 +16622,7 @@
             "price": 19,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "7454966",
@@ -16784,7 +16784,7 @@
             "price": 15,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "6571892",
@@ -17531,7 +17531,7 @@
             "price": 8,
             "image": null,
             "categorySlug": "frutas",
-            "featured": false
+            "featured": true
         },
         {
             "id": "6617929",
@@ -18197,7 +18197,7 @@
             "price": 17,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "5731450",
@@ -18413,7 +18413,7 @@
             "price": 18,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "6903967",
@@ -22094,7 +22094,7 @@
             "price": 1,
             "image": null,
             "categorySlug": "ingredientes-basicos",
-            "featured": false
+            "featured": true
         },
         {
             "id": "6180148",
