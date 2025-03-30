@@ -18,3 +18,14 @@ export async function getUserByRoutename({ routeName }: { routeName: string }) {
 
     return response.data;
 }
+
+export async function getUserAccNo({ routeName }: { routeName: string }) {
+    try {
+        const response = await API.get(`/user/${routeName}`)
+        const userID = response.data.account_no
+        return userID;
+    } catch (error) {
+      console.error(`Bad Name :(`);
+      return undefined;
+    }
+  }

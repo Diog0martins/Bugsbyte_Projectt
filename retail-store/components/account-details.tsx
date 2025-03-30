@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { getUserByRoutename } from '../lib/api';
+import { getUserByRoutename, getUserAccNo } from '../lib/api';
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export default function AccountDetails() {
   const res = getUserByRoutename({routeName: "JoaoFernandes"});
+  console.log(getUserAccNo({routeName: "JoaoFernandes"}))
   console.log(res);
   const [user, setUser] = useState(res)
 

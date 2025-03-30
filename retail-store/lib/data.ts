@@ -21,7 +21,6 @@ export async function getCategories(): Promise<Category[]> {
 }
 
 export async function getCategory(slug: string): Promise<Category | undefined> {
-  await delay(300)
   const category_response = await axios.get(`${API_BASE_URL}/category`);
   const categories: Category[] = category_response.data;
   return categories.find((category) => category.slug === slug)
