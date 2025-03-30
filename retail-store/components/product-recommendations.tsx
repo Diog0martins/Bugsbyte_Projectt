@@ -1,5 +1,5 @@
 import { getRelatedProducts } from "@/lib/data"
-import ProductCard from "./product-card"
+import {ProductCard} from "./product-card"
 
 export default async function ProductRecommendations({ productId }: { productId: string }) {
   const products = await getRelatedProducts(productId)

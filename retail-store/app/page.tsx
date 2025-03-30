@@ -31,7 +31,7 @@ export default function HomePage() {
 function ProductsSkeleton() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {Array(8)
+      {Array(12)
         .fill(0)
         .map((_, i) => (
           <div key={i} className="border rounded-lg p-4">
@@ -47,11 +47,11 @@ function ProductsSkeleton() {
 
 function CategoryListSkeleton() {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       {Array(4)
         .fill(0)
         .map((_, i) => (
-          <div key={i} className="flex flex-col items-center">
+          <div key={i} className="flex rounded-lg flex-col items-center">
             <Skeleton className="h-24 w-24 rounded-full mb-2" />
             <Skeleton className="h-4 w-24" />
           </div>

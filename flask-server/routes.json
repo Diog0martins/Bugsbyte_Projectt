@@ -9,7 +9,8 @@
             "age_group": "55-65 anos",
             "district": "viana do castelo", 
             "segment_cd_lifestyle": "4",
-            "segment_cd_lifestage": "4"
+            "segment_cd_lifestage": "4",
+            "basket": []
         },
         {
             "routename": "JoaoFernandes",
@@ -20,7 +21,8 @@
             "age_group": "55-65 anos",
             "district": "viana do castelo", 
             "segment_cd_lifestyle": "4",
-            "segment_cd_lifestage": "4"
+            "segment_cd_lifestage": "4",
+            "basket": []
         },
         {
             "routename": "GabrielDantas",
@@ -31,7 +33,8 @@
             "age_group": "55-65 anos",
             "district": "viana do castelo", 
             "segment_cd_lifestyle": "4",
-            "segment_cd_lifestage": "4"
+            "segment_cd_lifestage": "4",
+            "basket": []
         }
     ],
 
@@ -72,7 +75,7 @@
         "id": "2735715",
         "name": "FEIJAO ENCARNADO CACAROLA 500GR",
         "description": null,
-        "price": 8,
+        "price": 8.5,
         "image": null,
         "categorySlug": "ingredientes-basicos",
         "featured": true

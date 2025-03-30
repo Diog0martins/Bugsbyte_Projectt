@@ -33,5 +33,6 @@ export interface User {
   district: string
   segment_cd_lifestyle: string
   segment_cd_lifestage: string
+  basket: CartItem[]
 }
 

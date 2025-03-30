@@ -15,7 +15,7 @@ export default function AddToCartButton({ product }: { product: Product }) {
     addItem({
       id: product.id,
       name: product.name,
-      price: product.price,
+      price: parseFloat(product.price),
       image: product.image,
       quantity: 1,
     })
@@ -26,7 +26,7 @@ export default function AddToCartButton({ product }: { product: Product }) {
   }
 
   return (
-    <Button className="w-full" onClick={handleAddToCart} disabled={isAdding}>
+    <Button className="w-full mt-auto" onClick={handleAddToCart} disabled={isAdding}>
       {isAdding ? (
         "Added!"
       ) : (
